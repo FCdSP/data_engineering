@@ -1,0 +1,25 @@
+{{
+  config(
+    materialized='table'
+  )
+}}
+
+
+with pix_movements_in as (
+
+    select
+        id
+        ,account_id
+        ,in_or_out
+        ,pix_amount
+        ,pix_requested_at
+        ,pix_completed_at
+        ,status
+
+    from `nubank-test-351718`.nubank_test.pix_movements    
+    WHERE in_or_out = 'pix_in'
+
+)
+
+
+select * from pix_movements_in
