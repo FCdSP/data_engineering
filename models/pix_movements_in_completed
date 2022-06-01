@@ -1,13 +1,13 @@
-{{
-  config(
-    materialized='table'
-  )
-}}
+--{{
+--  config(
+--    materialized='table'
+--  )
+--}}
 
 
 with pix_movements_in_completed as (
 
-    select * from {{ ref('stg_customers') }}
+    select * from {{ ref('pix_movements_in') }}
     where status = 'completed'
 
 )
