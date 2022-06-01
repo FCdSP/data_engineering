@@ -48,7 +48,7 @@ my-bigquery-db:
 my-bigquery-db:
   target: prod
   outputs:
-    dev:
+    prod:
       type: bigquery
       method: oauth
       dataset: nubank_test # You can also use "schema" here
